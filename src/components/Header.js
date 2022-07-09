@@ -1,8 +1,12 @@
-import React from 'react'
+import React, {Fragment} from 'react'
 
-const Header = () => {
+const Header = ({title, description}) => {
+  // Aquí va código estándar de JS
   return (
-    <h1>Hola Mundo</h1>
+    <Fragment>
+      <h1>{title}</h1>
+      <p>{description}</p>
+    </Fragment>
   )
 }
 
