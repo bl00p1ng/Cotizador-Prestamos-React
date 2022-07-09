@@ -7,7 +7,6 @@ function App() {
     <Fragment>
       <Header 
         title="Cotizador de seguros"
-        description="Utiliza el formulario y obten una cotización"
       />
     </Fragment>
   );

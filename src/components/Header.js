@@ -1,13 +1,7 @@
-import React, {Fragment} from 'react'
+import React from 'react'
 
-const Header = ({title, description}) => {
-  // Aquí va código estándar de JS
-  return (
-    <Fragment>
-      <h1>{title}</h1>
-      <p>{description}</p>
-    </Fragment>
-  )
-}
+const Header = ({title}) => (
+  <h1>{title}</h1>
+)
 
 export default Header
