@@ -1,7 +1,9 @@
 import React, {useState, Fragment} from 'react'
 import { calculateTotal } from '../helpers'
 
-const Form = ({quantity, saveQuantity, period, savePeriod}) => {
+const Form = (props) => {
+  const {quantity, saveQuantity, period, savePeriod, total, saveTotal} = props
+ 
   // Crear state para un mensaje de error
   const [error, saveError] = useState(false)
 
@@ -20,7 +22,9 @@ const Form = ({quantity, saveQuantity, period, savePeriod}) => {
 
       // Calcular cotización
       const total = calculateTotal(quantity, period)
-      console.log(total)
+
+      // Una vez calculado, guradar el total
+      saveTotal(total)
   }
 
   return (

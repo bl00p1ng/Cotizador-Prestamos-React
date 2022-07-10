@@ -6,6 +6,7 @@ function App() {
   // Definir el state
   const [quantity, saveQuantity] = useState(0)
   const [period, savePeriod] = useState('')
+  const [total, saveTotal] = useState(0)
 
   return (
     <Fragment>
@@ -19,7 +20,11 @@ function App() {
           saveQuantity={saveQuantity}
           period={period}
           savePeriod={savePeriod}
+          total={total}
+          saveTotal={saveTotal}
         />
+
+        <p>El total es ${total}</p>
       </div>
     </Fragment>
   );
