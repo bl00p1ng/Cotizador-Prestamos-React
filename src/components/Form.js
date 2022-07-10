@@ -1,8 +1,9 @@
 import React from 'react'
 
-const Form = () => {
+const Form = ({quantity, saveQuantity}) => {
   return (
     <form>
+      {quantity}
       <div className="row">
         <div>
           <label>Cantidad Prestamo</label>
@@ -10,6 +11,7 @@ const Form = () => {
             className="u-full-width" 
             type="number" 
             placeholder="Ejemplo: 3000" 
+            onChange={ e => saveQuantity(parseInt(e.target.value)) }
           />
         </div>
         <div>
