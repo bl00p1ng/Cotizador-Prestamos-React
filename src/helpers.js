@@ -19,12 +19,31 @@ export function calculateTotal(quantity, period) {
         totalQuantity = quantity * .10;
     }
 
-    console.log(totalQuantity);
-
     /* Interes del préstamo con base en los meses del plazo:
     -> 3 meses = 5%
     -> 6 meses = 10%
     -> 12 meses = 15%
     -> 24 meses = 20%
      */
+
+    let totalPeriod = 0
+
+    switch (period) {
+        case 3:
+            totalPeriod = quantity * .05
+            break;
+        case 6:
+            totalPeriod = quantity * .10
+            break;
+        case 12:
+            totalPeriod = quantity * .15
+            break;
+        case 24:
+            totalPeriod = quantity * .20
+            break;
+        default:
+            break;
+    }
+
+    return totalQuantity + totalPeriod + quantity
 }

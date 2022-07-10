@@ -19,7 +19,8 @@ const Form = ({quantity, saveQuantity, period, savePeriod}) => {
       saveError(false)
 
       // Calcular cotización
-      calculateTotal(quantity, period)
+      const total = calculateTotal(quantity, period)
+      console.log(total)
   }
 
   return (
