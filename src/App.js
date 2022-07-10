@@ -3,17 +3,23 @@ import Header from './components/Header'
 import Form from './components/Form'
 import Message from './components/Message'
 import Result from './components/Result'
+import Spinner from './components/Spinner'
 
 function App() {
   // Definir el state
   const [quantity, saveQuantity] = useState(0)
   const [period, savePeriod] = useState('')
   const [total, saveTotal] = useState(0)
+  const [isLoading, saveIsLoading] = useState(false)
 
-  // Validar si se han ingresado datos en la app
   let component
 
-  if (total === 0) {
+  // Mostrar u ocultar el spinner
+  if (isLoading) {
+    component = <Spinner />
+  }
+  // Validar si se han ingresado datos en la app
+  else if (total === 0) {
     // Si no se han ingresado datos se muestra un mensaje con instrucciones
     component = <Message />
   } else {
@@ -37,8 +43,8 @@ function App() {
           saveQuantity={saveQuantity}
           period={period}
           savePeriod={savePeriod}
-          total={total}
           saveTotal={saveTotal}
+          saveIsLoading={saveIsLoading}
         />
 
         <div className="messages">

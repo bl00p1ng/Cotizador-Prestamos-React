@@ -2,7 +2,7 @@ import React, {useState, Fragment} from 'react'
 import { calculateTotal } from '../helpers'
 
 const Form = (props) => {
-  const {quantity, saveQuantity, period, savePeriod, total, saveTotal} = props
+  const {quantity, saveQuantity, period, savePeriod, saveTotal, saveIsLoading} = props
  
   // Crear state para un mensaje de error
   const [error, saveError] = useState(false)
@@ -20,11 +20,20 @@ const Form = (props) => {
       // Eliminar error previo
       saveError(false)
 
-      // Calcular cotización
-      const total = calculateTotal(quantity, period)
+      // Habilitar el spinner
+      saveIsLoading(true)
 
-      // Una vez calculado, guradar el total
-      saveTotal(total)
+      // Calcular cotización
+      setTimeout(() => {
+        const total = calculateTotal(quantity, period)
+  
+        // Una vez calculado, guradar el total
+        saveTotal(total)
+
+      // Deshabilitar el spinner
+      saveIsLoading(false)
+      }, 3000);
+
   }
 
   return (
