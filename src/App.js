@@ -18,7 +18,11 @@ function App() {
     component = <Message />
   } else {
     // Si se han ingresado datos se muestra el resultado de la cotización
-    component = <Result />
+    component = <Result
+                  total={total}
+                  period={period}
+                  quantity={quantity}
+                />
   }
 
   return (
