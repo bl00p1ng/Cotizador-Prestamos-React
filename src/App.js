@@ -34,7 +34,7 @@ function App() {
   return (
     <Fragment>
       <Header 
-        title="Cotizador de seguros"
+        title="Cotizador de Préstamos"
       />
 
       <div className="container">
