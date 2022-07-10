@@ -1,9 +1,10 @@
 import React from 'react'
 
-const Form = ({quantity, saveQuantity}) => {
+const Form = ({quantity, saveQuantity, period, savePeriod}) => {
   return (
     <form>
       {quantity}
+      {period}
       <div className="row">
         <div>
           <label>Cantidad Prestamo</label>
@@ -18,6 +19,7 @@ const Form = ({quantity, saveQuantity}) => {
           <label>Plazo para Pagar</label>
           <select 
             className="u-full-width"
+            onChange={ e => savePeriod(parseInt(e.target.value)) }
           >
             <option value="">Seleccionar</option>
             <option value="3">3 meses</option>
