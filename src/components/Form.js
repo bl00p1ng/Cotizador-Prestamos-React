@@ -1,10 +1,21 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 const Form = ({quantity, saveQuantity, period, savePeriod}) => {
+  // Crear state para un mensaje de error
+  const [error, saveError] = useState(false)
+
+  // Calcular el total a pagar por el préstamo
+  const calculateLoan = e => {
+      e.preventDefault()
+
+      // Validar form
+      if (quantity === 0 || period === '') {
+        saveError(true)
+      }
+  }
+
   return (
-    <form>
-      {quantity}
-      {period}
+    <form onSubmit={ calculateLoan }>
       <div className="row">
         <div>
           <label>Cantidad Prestamo</label>

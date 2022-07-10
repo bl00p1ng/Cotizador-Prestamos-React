@@ -5,7 +5,7 @@ import Form from './components/Form'
 function App() {
   // Definir el state
   const [quantity, saveQuantity] = useState(0)
-  const [period, savePeriod] = useState(0)
+  const [period, savePeriod] = useState('')
 
   return (
     <Fragment>
